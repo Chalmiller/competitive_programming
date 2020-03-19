@@ -22,4 +22,5 @@ DirectedGraph.prototype.topologicalSort = function() {
         }
     }
     return stack;
-}
+};
+
