@@ -1,0 +1,22 @@
+def pairs_in_sorted_array(arr, n, x):
+    for i in range(n):
+        if arr[i] > arr[i + 1]:
+            break
+    # smallest element index
+    l = (i + 1) % n
+    #  largest element index
+    r = i
+    cnt = 0
+
+    while (l != r):
+        if arr[l] + arr[r] == x:
+            cnt += 1
+            if l == (r - 1 + n) % n:
+                return cnt
+            l = (l + 1) % n
+            r = (r - 1 + n) % n 
+        elif arr[l] + arr[r] < x:
+            l = (l + 1) % n
+        else:
+            r = (n + r - 1) % n
+    return cnt
