@@ -54,3 +54,4 @@ class AdaptableHeapPriorityQueue(HeapPriorityQueue):
       self._data.pop()                    # remove it from the list
       self._bubble(j)                     # fix item displaced by the swap
     return (loc._key, loc._value)          
+    
