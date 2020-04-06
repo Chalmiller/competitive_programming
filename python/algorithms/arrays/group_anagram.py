@@ -7,6 +7,7 @@ class Solution:
         for w in strs:
             key = tuple(sorted(w))
             d[key] = d.get(key, []) + [w]
+            print(d.get(key, []))
         return list(d.values())
 
 obj = Solution()
