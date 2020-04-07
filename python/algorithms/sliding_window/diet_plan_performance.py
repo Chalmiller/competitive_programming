@@ -4,7 +4,7 @@ import itertools
 
 class Solution:
     def dietPlanPerformance(self, calories: List[int], k: int, lower: int, upper: int) -> int:
-        points, win = 0, sum(itertools.islice(calories, k -1))
+        points, win = 0, sum(itertools.islice(calories, k - 1))
         for i, calory in enumerate(itertools.islice(calories, k -1, None), k - 1):
             win += calory - (i >= k) * calories[i - k]
             points += (win > upper) - (win < lower)
