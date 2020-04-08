@@ -14,7 +14,8 @@ class Solution:
         #     else:
         #         return potential
         total_tries = a + b + c
-        for let in range(total_tries)
+        for let in range(total_tries):
+            if 
 
 
 obj = Solution()

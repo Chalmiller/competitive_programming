@@ -11,6 +11,10 @@ class Solution:
                 else:
                     flipped_list[index][num] = 0
         return flipped_list
+        """
+        bitwise flipping 
+        return [[1 ^ i for i in reversed(row)] for row in A]
+        """
 
 obj = Solution()
 num = obj.flipAndInvertImage([[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]])

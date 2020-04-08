@@ -3,5 +3,8 @@ from typing import *
 
 class Solution:
     def sortString(self, s: str) -> str:
-        split_string = s.split("")
+        new_string = []
+        while len(new_string) != len(s):
+            
+
 
