@@ -10,6 +10,7 @@ def find_string_anagrams(str, pattern):
     counter_dict[s] += 1
 
   for win_start in range(len(str) - win_length + 1):
-    sub_str = str[win_start : ]
+    sub_str = str[win_start : win_start + win_length]
+    
   
   return result_indexes
