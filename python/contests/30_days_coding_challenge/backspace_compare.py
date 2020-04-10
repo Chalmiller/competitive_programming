@@ -20,7 +20,6 @@ class Solution:
             continue
           else:
             t_array.append(T[index]) 
-        print(s_array, t_array)
         return s_array == t_array
 
 obj = Solution()
