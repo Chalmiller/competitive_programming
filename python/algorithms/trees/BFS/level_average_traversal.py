@@ -26,10 +26,8 @@ def find_level_averages(root):
         queue.append(currentNode.left)
       if currentNode.right:
         queue.append(currentNode.right)
-
     # append the current level's average to the result array
     result.append(levelSum / levelSize)
-
   return result
 
 
