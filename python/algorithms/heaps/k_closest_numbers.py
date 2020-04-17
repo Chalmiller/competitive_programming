@@ -1,25 +1,28 @@
-from heapq import *
+from collections import deque
 
 
 def find_closest_elements(arr, K, X):
+  result = deque()
   index = binary_search(arr, X)
-  low, high = index - K, index + K
+  leftPointer, rightPointer = index, index + 1
+  n = len(arr)
+  for i in range(K):
+    if leftPointer >= 0 and rightPointer < n:
+      diff1 = abs(X - arr[leftPointer])
+      diff2 = abs(X - arr[rightPointer])
+      if diff1 <= diff2:
+        result.appendleft(arr[leftPointer])
+        leftPointer -= 1
+      else:
+        result.append(arr[rightPointer])
+        rightPointer += 1
+    elif leftPointer >= 0:
+      result.appendleft(arr[leftPointer])
+      leftPointer -= 1
+    elif rightPointer < n:
+      result.append(arr[rightPointer])
+      rightPointer += 1
 
-  low = max(low, 0)  # 'low' should not be less than zero
-  # 'high' should not be greater the size of the array
-  high = min(high, len(arr) - 1)
-
-  minHeap = []
-  # add all candidate elements to the min heap, sorted by their absolute difference from 'X'
-  for i in range(low, high+1):
-    heappush(minHeap, (abs(arr[i] - X), arr[i]))
-
-  # we need the top 'K' elements having smallest difference from 'X'
-  result = []
-  for _ in range(K):
-    result.append(heappop(minHeap)[1])
-
-  result.sort()
   return result
 
 
