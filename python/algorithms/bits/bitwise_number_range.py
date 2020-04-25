@@ -6,3 +6,4 @@ class Solution:
         n >>= 1
         i += 1
       return n << i
+      
