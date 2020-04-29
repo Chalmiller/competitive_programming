@@ -9,7 +9,7 @@ class Solution(object):
               if matrix[i][j] =='1': dp[i][j] = min(dp[i-1][j],dp[i][j-1],dp[i-1][j-1])+1
               else: dp[i][j] = 0
       
-      ans = max([max(i) for i in dp])
+      ans = max([max(i) for i in dp]) 
       return ans ** 2
 
 obj = Solution()
