@@ -3,3 +3,5 @@ def sumDigits(testVariable):
       return int(testVariable)
     else:
       return int(testVariable[0]) + sumDigits(testVariable[1:])
+
+      
