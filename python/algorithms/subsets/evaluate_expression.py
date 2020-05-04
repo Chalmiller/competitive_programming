@@ -7,9 +7,9 @@ def diff_ways_to_evaluate_expression(input):
     for i in range(0, len(input)):
       char = input[i]
       if not char.isdigit():
-        leftParks = diff_ways_to_evaluate_expression(input[0:i])
+        leftParts = diff_ways_to_evaluate_expression(input[0:i])
         rightParts = diff_ways_to_evaluate_expression(input[i+1:])
-        for part1 in leftParks:
+        for part1 in leftParts:
           for part2 in rightParts:
             if char == '+':
               result.append(part1 + part2)
