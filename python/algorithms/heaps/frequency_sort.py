@@ -7,11 +7,14 @@ def sort_character_by_frequency(str):
   charFrequencyMap = {}
   for char in str:
     charFrequencyMap[char] = charFrequencyMap.get(char, 0) + 1
+  
+  print(charFrequencyMap)
 
   maxHeap = []
   # add all characters to the max heap
   for char, frequency in charFrequencyMap.items():
     heappush(maxHeap, (-frequency, char))
+  print(maxHeap)
 
   # build a string, appending the most occurring characters first
   sortedString = []
