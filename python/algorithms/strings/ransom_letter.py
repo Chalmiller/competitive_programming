@@ -15,7 +15,6 @@ class Solution:
                 ransomNote = ransomNote[1:]
             else:
                 return False
-            print(ransomNote, mag_inv)
         return True
 
 obj = Solution()

@@ -26,7 +26,8 @@ def tree_right_view(root):
         queue.append(curr_el.left)
       if curr_el.right:
         queue.append(curr_el.right)
-
+      
+    result.append[-1]
 
   return result
 
