@@ -1,21 +1,28 @@
 def can_partition(num):
-  return can_partition_recursive(num, 0, 0, 0)
+  s = sum(num)
+  dp = [[-1 for x in range(s+1)] for y in range(len(num))]
+  return can_partition_recursive(dp, num, 0, 0, 0)
 
 
-def can_partition_recursive(num, currentIndex, sum1, sum2):
+def can_partition_recursive(dp, num, currentIndex, sum1, sum2):
+  print(dp)
   # base check
   if currentIndex == len(num):
     return abs(sum1 - sum2)
 
-  # recursive call after including the number at the currentIndex in the first set
-  diff1 = can_partition_recursive(
-    num, currentIndex + 1, sum1 + num[currentIndex], sum2)
+  # check if we have not already processed similar problem
+  if dp[currentIndex][sum1] == -1:
+    # recursive call after including the number at the currentIndex in the first set
+    diff1 = can_partition_recursive(
+      dp, num, currentIndex + 1, sum1 + num[currentIndex], sum2)
 
-  # recursive call after including the number at the currentIndex in the second set
-  diff2 = can_partition_recursive(
-    num, currentIndex + 1, sum1, sum2 + num[currentIndex])
+    # recursive call after including the number at the currentIndex in the second set
+    diff2 = can_partition_recursive(
+      dp, num, currentIndex + 1, sum1, sum2 + num[currentIndex])
 
-  return min(diff1, diff2)
+    dp[currentIndex][sum1] = min(diff1, diff2)
+
+  return dp[currentIndex][sum1]
 
 
 def main():
