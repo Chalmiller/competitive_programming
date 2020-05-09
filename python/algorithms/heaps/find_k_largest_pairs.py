@@ -12,6 +12,9 @@ def find_k_largest_pairs(nums1, nums2, k):
         else:
           heappop(minHeap)
           heappush(minHeap, (nums1[i] + nums2[j], i, j))
+  result = []
+  for (num, i, j) in minHeap:
+    result.append([nums1[i], nums2[j]])
 
   return result
 
