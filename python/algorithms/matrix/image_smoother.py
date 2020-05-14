@@ -1,18 +1,19 @@
 from typing import *
+import math
 
 class Solution:
     def imageSmoother(self, M: List[List[int]]) -> List[List[int]]:
-        R, C = len(M), len(M[0])
-        ans = [[0] * C for _ in M]
-
-
-        for r in range(R):
-          for c in range(C):
-            count = 0
-            for nr in (r-1, r, r+1):
-              for nc in (c-1, c, c+1):
-                if 0 <= nr < R and 0 <= nc < C:
-                  ans[r][c] += M[nr][nc]
-                  count += 1
-            ans[r][c] /= count
-        return ans
+        if not M: return M
+        new = [[0 for _ in range(len(M[0]))] for _ in range(len(M))]
+        directions = ((0, 0), (0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1))
+        for i in range(len(new)):
+            for j in range(len(new[0])):
+                total = 0
+                count = 0
+                for r, c in directions:
+                    if i + r < 0 or j + c < 0 or i + r >= len(M) or j + c >= len(M[0]):
+                        continue
+                    total += M[i + r][j + c]
+                    count += 1
+                new[i][j] = math.floor(total/count)
+        return new
