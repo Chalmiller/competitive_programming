@@ -9,3 +9,5 @@ def printPascal(testVariable) :
       line.append(previous_line[i] + previous_line[i + 1])
     line += [1]
   return line
+
+print(printPascal(5))
