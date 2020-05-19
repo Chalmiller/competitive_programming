@@ -9,14 +9,14 @@ from typing import *
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        def dfs(node, res, paths = []):
-          if node:
-            new_path.append(node.val)
-            if not node.left and not node.right:
-              res.append(new_path)
-            dfs(node.left, res, new_path)
-            dfs(node.right, res, new_path)
-          return res
         
-        response = []
-        dfs
+        if root:
+
+          curr_val = root.val
+
+          if p.val > curr_val and q.val > curr_val:
+            return self.lowestCommonAncestor(root.right, p, q)
+          elif p.val < curr_val and q.val < curr_val:
+            return self.lowestCommonAncestor(root.left, p, q)
+          else:
+            return root.val

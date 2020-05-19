@@ -10,7 +10,7 @@ class Solution:
             _min = price
           else:
             _max_profit = max(_max_profit, price - _min) 
-        return _max_profit
+        return _max_profit if _max_profit > -math.inf else 0
 
 
 obj = Solution()

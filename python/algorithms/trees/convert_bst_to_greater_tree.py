@@ -24,6 +24,7 @@ class Solution:
           node.val = total
 
           node = node.left
+          
         return root
 
 
