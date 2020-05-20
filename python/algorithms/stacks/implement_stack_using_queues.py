@@ -21,7 +21,7 @@ class MyStack:
         Removes the element on top of the stack and returns that element.
         """
         if self.stack:
-          self.stack.pop(0)
+          self.stack.popleft()
         
 
     def top(self) -> int:
