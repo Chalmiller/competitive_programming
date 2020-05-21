@@ -7,10 +7,11 @@ class Solution:
       ans = 0
 
       for seat, group in itertools.groupby(seats):
-        print(seat, list(group))
         if not seat:
           k = len(list(group))
           ans = max(ans, (k+1)//2)
+
+      return max(ans, seats.index(1), seats[::-1].index(1))
 
 obj = Solution()
 print(obj.maxDistToClosest([1,0,0,0,1,0,1]))
