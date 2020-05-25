@@ -8,12 +8,11 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        link_list = []
-        
+        num_list = []
         while head:
-            link_list.append(head.val)
+            num_list.append(head.val)
             head = head.next
             
-        r_link_list = reversed(link_list)
+        reversed_num_list = num_list[::-1]
         
-        return link_list == r_link_list
+        return num_list == reversed_num_list
