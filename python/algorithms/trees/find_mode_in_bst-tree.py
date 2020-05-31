@@ -9,25 +9,37 @@ import itertools
 #         self.left = left
 #         self.right = right
 class Solution:
+    curVal, curCount = None, 0
+    maxCount = 0
+    maxList = set()
+    
     def findMode(self, root: TreeNode) -> List[int]:
-        def dfs(node, res):
-          if node:
-            res.append(node.val)
-            dfs(node.right, res)
-            dfs(node.left, res)
+        if not root:
+            return []
+        self.inorder(root)
+        return list(self.maxList)
 
-        result = []
-        dfs(root, result)
-        counter = collections.Counter(result)
-        highest_occuring = sorted(counter.items(), key=lambda x: x[1])
-        response = []
-
-        loop = True
-        index = 0
-        groups = itertools.groupby(highest_occuring, key=lambda x:x[1])
-        print(groups)
-
-        return highest_occuring[0][0]
+    def inorder(self, node: TreeNode):
+        if not node:
+            return
+        self.inorder(node.left)
+        self.visitNode(node)
+        self.inorder(node.right)
+    
+    def visitNode(self, node: TreeNode):
+        if self.curVal == node.val:
+            self.curCount += 1
+        else:
+            self.curCount = 1
+            
+        self.curVal = node.val
+        
+        if self.curCount == self.maxCount:
+            self.maxList.add(node.val)
+        elif self.curCount > self.maxCount:
+            self.maxList = set([node.val])
+        
+        self.maxCount = max(self.curCount, self.maxCount)
 
 obj = Solution()
 print(obj.findMode())
