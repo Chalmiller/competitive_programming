@@ -10,18 +10,24 @@ def contains_cycle(first_node):
     2. ptr1 travels at regular pace of one node at a time, while ptr2 is double that
     3. if: ptr1 == ptr2 at any point, there is a cycle present
     4. else: if ptr2 hits a None value, we return from the function
+    Edge Case:
+      - Linked list is empty
+      - linked list has one element
     """
-    slow, fast = first_node, first_node
+    # Edge case 1
+    if not first_node:
+      return False
+    else:
+      slow, fast = first_node, first_node
 
-    # while there is a node 2 steps ahead of the fast pointer
-    while fast.next.next:
+    # while is a next node
+    while fast and fast.next:
       if fast.next.next == slow.next:
         return True
+      else:
+        slow = slow.next
+        fast = fast.next.next
     return False
-
-
-
-
 
 # Tests
 
