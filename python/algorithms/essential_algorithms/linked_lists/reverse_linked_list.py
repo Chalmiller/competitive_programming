@@ -17,7 +17,7 @@ def reverse(head_of_list):
       curr.next = prev
       prev = curr
       curr = next
-    
+        
     return prev
 
 
