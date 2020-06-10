@@ -92,7 +92,7 @@ def create_binary_tree(count):
   return root
 
 def create_random_BST(count):
-  root = None;
+  root = None
   for i in range(1, count):
     root = insert(root, random.randrange(200, 300))
   return root
@@ -182,3 +182,4 @@ def is_identical_tree(root1,root2):
     return is_identical_tree(root1.left,root2.left) and is_identical_tree(root1.right,root2.right)
 
   return False
+  
