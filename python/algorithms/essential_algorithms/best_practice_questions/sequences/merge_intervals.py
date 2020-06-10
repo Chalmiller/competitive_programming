@@ -21,7 +21,10 @@ class Solution:
           - O(n) - time complexity
           - O(1) - space complexity
         """
-        # [[1,3],[2,6],[8,10],[15,18]]
+        # [[1,7],[2,6],[8,10],[15,18]]
+        if not intervals:
+          return 
+        intervals.sort(lambda x: x[0])
         start, end = intervals[0][0], intervals[0][1]
         response = []
 
@@ -34,5 +37,6 @@ class Solution:
             start = curr_start
             end = curr_end
         response.append([start, end])
+        return response
 
 
