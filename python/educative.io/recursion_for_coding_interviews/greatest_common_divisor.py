@@ -3,7 +3,7 @@ def gcd(testVariable1, testVariable2) :
   Task: Find and return the greatest common divisor of the two input numbers
 
   Algorithm:
-  1. 
+  1. subtract the test variables from eachother and return the recursive function until they match
   """
   if testVariable1 == testVariable2:
     return testVariable1
