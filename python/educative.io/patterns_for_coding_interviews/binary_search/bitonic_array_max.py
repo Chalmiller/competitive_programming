@@ -1,6 +1,21 @@
 def find_max_in_bitonic_array(arr):
-  # TODO: Write your code here
-  return -1
+  """
+  Task: return the maximum value of the mountain array/bitonic array
+
+  Algorithm:
+  1. 
+  """
+  start, end = 0, len(arr) - 1
+
+  while start < end:
+    mid = start + (end - start)//2
+
+    if arr[mid] > arr[mid+1]:
+      end = mid
+    else:
+      start = mid + 1
+
+  return arr[start]
 
 
 def main():

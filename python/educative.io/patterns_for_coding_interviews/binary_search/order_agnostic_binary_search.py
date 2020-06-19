@@ -1,12 +1,12 @@
 def binary_search(arr, key):
-  """
-  Task: return the index of the item if it is present, otherwise -1
+  # """
+  # Task: return the index of the item if it is present, otherwise -1
 
-  Algorithm:
-  1. sort the array
-  2. perform binary search
-  3. return index of element
-  """
+  # Algorithm:
+  # 1. sort the array
+  # 2. perform binary search
+  # 3. return index of element
+  # """
   low, high = 0, len(arr) - 1
   ascending = arr[low] < arr[high]
 
