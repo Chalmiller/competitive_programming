@@ -1,3 +1,4 @@
+import copy
 
 def is_valid_move(proposed_row, proposed_col, solution):
   # we need to check with all queens
@@ -32,4 +33,4 @@ def solve_n_queens(n, results):
 results = []  
 n = 4
 res = solve_n_queens(n, results)
-print("Total solutions count for " + str(n) + " queens: " + str(res));
+print("Total solutions count for " + str(n) + " queens: " + str(res))
