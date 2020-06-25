@@ -10,5 +10,9 @@ class Solution:
           1. Greedily take each min and sell once a bigger value is found
           2. 
         """
+        _max_profit = 0
 
-      
+        for i in range(1, len(prices)):
+          if prices[i] > prices[i-1]:
+            _max_profit += prices[i] - prices[i-1]
+        return _max_profit
