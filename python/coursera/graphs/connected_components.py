@@ -2,9 +2,22 @@
 import sys
 
 def number_of_components(adj):
-    result = 0
-    #write your code here
-    return result
+    visited = [False] * len(adj)
+
+    def dfs(visited, adj, vertex):
+      visited[vertex] = True
+      for v in adj[vertex]:
+        if not visited[v]:
+          dfs(visited, adj, v)
+
+    count = 0
+
+    for v in range(len(adj)):
+      if not visited[v]:
+        dfs(visited, adj, v)
+        count += 1
+
+    return count
 
 if __name__ == '__main__':
     input = sys.stdin.read()

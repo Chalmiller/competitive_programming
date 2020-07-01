@@ -3,8 +3,22 @@
 import sys
 
 def reach(adj, x, y):
-    
-    return 0
+    visited = [False] * len(adj)
+
+    def dfs(visited, adj, vertex):
+      visited[vertex] = True
+      for v in adj[vertex]:
+        if not visited[v]:
+          dfs(visited, adj, v)
+
+    visited[x] = True
+    for v in adj[x]:
+      dfs(visited, adj, v)
+
+    if visited[x] and visited[y]:
+      return 1
+    else:
+      return 0
 
 if __name__ == '__main__':
     input = sys.stdin.read()
