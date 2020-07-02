@@ -21,33 +21,33 @@ class Solution:
           - return if either of those conditions don't hold up
         """
 
-        def helper(node, lower = -math.inf, upper = math.inf):
-          if not node:
-            return True
-          val = node.val
-          if val <= lower or val >= upper:
-            return False
-          
-          if not helper(node.right, val, upper):
-            return False
-          if not helper(node.left, lower, val):
-            return False
-          return True
-
-        return helper(root)
-
-        # stack, inorder = [], 0
-
-        # while True:
-        #   while root:
-        #     stack.append(root.val)
-        #     root = root.left
-          
-        #   root = stack.pop()
-
-        #   if root.val <= inorder:
+        # def helper(node, lower = -math.inf, upper = math.inf):
+        #   if not node:
+        #     return True
+        #   val = node.val
+        #   if val <= lower or val >= upper:
         #     return False
-        #   inorder = root.val
-        #   root = root.right
+          
+        #   if not helper(node.right, val, upper):
+        #     return False
+        #   if not helper(node.left, lower, val):
+        #     return False
+        #   return True
 
-        # return True
+        # return helper(root)
+
+        stack, inorder = [], 0
+
+        while stack or root:
+          while root:
+            stack.append(root.val)
+            root = root.left
+          
+          root = stack.pop()
+
+          if root.val <= inorder:
+            return False
+          inorder = root.val
+          root = root.right
+
+        return True

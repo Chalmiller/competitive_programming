@@ -32,9 +32,7 @@ def bfs_traversal(g, source):
         return result
     # A list to hold the history of visited nodes
     # Make a node visited whenever you enqueue it into queue
-    visited = []
-    for i in range(num_of_vertices):
-        visited.append(False)
+    visited = [False] * num_of_vertices
     # Start from source
     result, visited = bfs_traversal_helper(g, source, visited)
     # visit remaining nodes

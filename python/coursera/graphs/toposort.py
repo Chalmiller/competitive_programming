@@ -8,10 +8,18 @@ def dfs(adj, used, order, x):
 
 
 def toposort(adj):
-    used = [0] * len(adj)
-    order = []
-    #write your code here
-    return order
+  """
+  Task: Implement topological sort
+  Algorithm:
+    1. while the adj is non-empty
+    2. dfs until the end of the graph
+    3. once an end is found, that is the sink, so insert that into a list
+    4. remove that vertex from the adj
+  """
+  used = [0] * len(adj)
+  order = []
+  #write your code here
+  return order
 
 if __name__ == '__main__':
     input = sys.stdin.read()

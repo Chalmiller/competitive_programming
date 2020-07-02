@@ -11,7 +11,6 @@ def number_of_components(adj):
           dfs(visited, adj, v)
 
     count = 0
-
     for v in range(len(adj)):
       if not visited[v]:
         dfs(visited, adj, v)

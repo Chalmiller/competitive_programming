@@ -4,7 +4,38 @@ import sys
 
 
 def acyclic(adj):
+    """
+    Algorithm:
+      1. find sink and place at end of list
+      2. remove sink from graph
+      3. repeat
+    """
+    # Define visited list
+    visited = [False] * len(adj)
+    rec_cycle = [False] * len(adj)
+
+    # dfs function 
+    def dfs(visited, rec_cycle, adj, vertex):
+      visited[vertex] = True
+      rec_cycle[vertex] = True
+
+      for v in adj[vertex]:
+        if not visited[v] and dfs(visited, rec_cycle, adj, v):
+          return 1
+        if rec_cycle[v]:
+          return 1
+
+      rec_cycle[vertex] = False
+      return 0
+        
+
+    for v in range(len(adj)):
+      if not visited[v]:
+        if dfs(visited, rec_cycle, adj, v):
+          return 1
+    
     return 0
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()
