@@ -20,6 +20,7 @@ def last_digit_of_fibonacci_number(n):
     for i in range(2, n):
         memo[i] = memo[i-1] + memo[i-2]
         
+    # Return the memoized result of the fibonacci number mod 10
     return memo[-1] % 10
 
 
