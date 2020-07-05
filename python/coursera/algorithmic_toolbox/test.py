@@ -1,0 +1,1 @@
+import last_digit_of_fibonacci
