@@ -13,16 +13,12 @@ def last_digit_of_fibonacci_number_naive(n):
 def last_digit_of_fibonacci_number(n):
     assert 0 <= n <= 10 ** 7
 
-    memo = [0] * n
-    memo[0] = 0
-    memo[1] = 1
-
-    for i in range(2, n+1):
-        memo[i] = memo[i-1] + memo[i-2]
-        
-    # Return the memoized result of the fibonacci number mod 10
-    # I think there may be a recursive way to implement this
-    return memo[-1] % 10
+    a, b = 0, 1
+    for _ in range(n-1):
+        c = a + b
+        c = c % 10
+        b, a = c, b
+    return c
 
 
 if __name__ == '__main__':

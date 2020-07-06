@@ -16,7 +16,7 @@ def fibonacci_number(n):
     if n <= 1:
         return n
 
-    memo = [0] * n
+    memo = [0] * (n+1)
     memo[0] = 0
     memo[1] = 1
 

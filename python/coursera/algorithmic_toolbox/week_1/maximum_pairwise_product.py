@@ -15,17 +15,9 @@ def max_pairwise_product_naive(numbers):
 
 
 def max_pairwise_product(numbers):
-    max_index1 = -1
-    for i in range(len(numbers)):
-        if max_index1 == -1 or numbers[i] > numbers[max_index1]:
-            max_index1 = i
-
-    max_index2 = -1
-    for i in range(len(numbers)):
-        if i != max_index1 and (max_index2 == -1 or numbers[i] > numbers[max_index2]):
-            max_index2 = i
-
-    return numbers[max_index1] * numbers[max_index2]
+    n = len(numbers)
+    numbers.sort()
+    return numbers[n-1] * numbers[n - 2]
 
 if __name__ == '__main__':
     n = int(input())
