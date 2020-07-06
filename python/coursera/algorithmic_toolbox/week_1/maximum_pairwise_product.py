@@ -28,11 +28,7 @@ def max_pairwise_product(numbers):
     return numbers[max_index1] * numbers[max_index2]
 
 if __name__ == '__main__':
-    # n = int(input())
-    # input_numbers = list(map(int, input().split()))
-    # assert len(input_numbers) == n
-    # print(max_pairwise_product(input_numbers))
-    n = 10**5
-    A = [0] * n
-    print(max_pairwise_product_naive(A))
-
+    n = int(input())
+    input_numbers = list(map(int, input().split()))
+    assert len(input_numbers) == n
+    print(max_pairwise_product(input_numbers))

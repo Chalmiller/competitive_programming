@@ -20,7 +20,7 @@ def fibonacci_number(n):
     memo[0] = 0
     memo[1] = 1
 
-    for i in range(2, n):
+    for i in range(2, n+1):
         memo[i] = memo[i-1] + memo[i-2]
     # return the memoization 
     return memo[-1]
