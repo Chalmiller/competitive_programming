@@ -17,6 +17,7 @@ def gcd(a, b):
     if b == 0:
         return a
     a = a % b
+    # return the greatest common denominator
     return gcd(b, a)
 
 if __name__ == '__main__':
