@@ -27,9 +27,7 @@ def reverse_words(message):
       if i == len(break_list) - 1:
         break
       else:
-        message[i] = let
-    print(message)
-    
+        message[i] = let    
 
 print(reverse_words([ 'c', 'a', 'k', 'e', ' ',
             'p', 'o', 'u', 'n', 'd', ' ',
