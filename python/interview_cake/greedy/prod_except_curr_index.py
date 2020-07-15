@@ -13,20 +13,18 @@ def get_products_of_all_ints_except_at_index(int_list):
       by the element at each index
     """
     if len(int_list) < 2:
-      raise ValueError("We needa few more values than that")
+      raise ValueError("We need a few more values than that")
     if int_list.count(0) > 1:
       return [0 for _ in range(len(int_list))]
 
-    total_prod = reduce(operator.mul, int_list)
-    res_list = []
-
-    for i, el in enumerate(int_list):
-      if el == 0:
-        temp_list = list(filter(lambda x: x > 0, int_list))
-        curr_prod = reduce(operator.mul, temp_list)
-        res_list.append(curr_prod)
-      else:
-        res_list.append(total_prod//el)
+    temp_array = [0] * len(int_list)
+    temp_array[0] = reduce(operator.mul, int_list[1:])
+    temp_array[-1] = reduce(operator.mul, int_list[:-2])
+    for i in range(1, len(int_list)):
+        curr_list = int_list[:i] + int_list[i+1:]
+        temp_array[i] = reduce(operator.mul, curr_list)
+    
+    int_list = temp_array[:]
 
     return int_list
 
