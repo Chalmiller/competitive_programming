@@ -35,3 +35,4 @@ def bfs(edges, N):
       discovered[i] = True
       q.append(i)
       recursive_bfs(graph, q, discovered)
+      
