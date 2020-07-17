@@ -5,7 +5,7 @@ class Node:
     self.left = None
     self.right = None
 
-def in_order(self, root):
+def in_order(root):
 
   current = root
   stack = []
@@ -30,5 +30,5 @@ root.left = Node(2)
 root.right = Node(3) 
 root.left.left = Node(4) 
 root.left.right = Node(5) 
-  
-root.in_order(root) 
+
+in_order(root) 

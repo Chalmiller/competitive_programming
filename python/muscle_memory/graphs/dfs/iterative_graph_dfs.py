@@ -16,12 +16,10 @@ class Graph:
     stack.append(s)
 
     while stack:
-      s = stack[-1]
-      stack.pop()
-
-      if (not visited[s]):
-        print(s, end=" ")
-        visited[s] = True
+      s = stack.pop()
+    
+      print(s, end=" ")
+      visited[s] = True
       for node in self.graph[s]:
         if not visited[node]:
           stack.append(node)
