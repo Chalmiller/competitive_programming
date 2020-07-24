@@ -6,6 +6,7 @@ class Solution:
         word_collection = defaultdict(list)
         res = []
 
+        # generate the dictionary
         for el in strs:
           anagram = sorted(el)
           word_collection[anagram].append(el)
