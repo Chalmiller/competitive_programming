@@ -1,10 +1,44 @@
 import unittest
+from collections import deque
+import math
 
 
 def is_balanced(tree_root):
+    """
+    Task: return true if the tree's leaf nodes are all at a distance within one node
+            of eachother from the origin point.
+    Intuition: BFS would work here.
 
-    # Determine if the tree is superbalanced
-    
+    Algorithm:
+        1. travel through the tree in a breadth first search pattern
+        2. count the tree level at each iteration
+        3. once a leaf is found save the min + 1
+        4. if another eaf is found outside of min, return False
+        5. else return True
+    """
+    if not tree_root:
+        return True
+
+    depths = []
+    stack = []
+
+    stack.append((tree_root, 1))
+
+    while stack:
+        node, depth = stack.pop()
+
+        if not node.left and not node.right:
+            if depth not in depths:
+                depths.append(depth)
+
+                if len(depths) > 2 or (len(depths) == 2 and depths[1] - depths[0] > 1):
+                    return False
+        
+        if node.left:
+            stack.append((node.left, depth + 1))
+        if node.right:
+            stack.append((node.right, depth + 1))
+
     return True
 
 # Tests
