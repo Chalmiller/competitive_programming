@@ -2,6 +2,7 @@ from typing import *
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
+      """Kadanes greedy algorithm"""
       if not nums:
         return nums
 
