@@ -13,7 +13,7 @@ class Fibonacci:
     else:
       return self.fibonacci_recursive(n-1) + self.fibonacci_recursive(n-2)
 
-  def dynamic_fibonacci(self, n ):
+  def dynamic_fibonacci(self, n):
 
     if n < 0:
       raise Exception('The number cannot be lower than 0')
@@ -30,6 +30,23 @@ class Fibonacci:
       self.memo[n] = result
 
       return result
+
+  def bottom_up_fibonacci(self, n):
+    if n < 0:
+      raise Exception('Fibonacci number cannot be negative')
+
+    elif n in [0,1]:
+      return n
+    
+    prev_prev = 0
+    prev = 1
+
+    for _ in range(n - 1):
+      current = prev + prev_prev
+      prev_prev = prev
+      prev = current
+    
+    return current
 
 class FibonacciTestSuite(unittest.TestCase):
 

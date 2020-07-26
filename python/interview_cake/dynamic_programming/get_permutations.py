@@ -3,31 +3,36 @@ import unittest
 
 def get_permutations(string):
 
-    # Generate all permutations of the input string
+    """
+    Task: generate a list of all permutations of a string
+    Inntuition: I think we could do this iteratively with a breadth first approach
+                but I know this asks specifically for the recursive version
+    
+    Algorithm:
+      - backtracking
+    """
+    if len(string) <= 1:
+      return set([string])
 
+    all_chars_except_last = string[:-1]
+    last_char = string[-1]
 
-    return set()
+    permutations_of_all_chars_except_last = get_permutations(all_chars_except_last)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    permutations = set()
+    for permutation_of_all_chars_except_last in permutations_of_all_chars_except_last:
+      for position in range(len(all_chars_except_last) + 1):
+        permutation = (
+          permutation_of_all_chars_except_last[:position]
+          + last_char
+          + permutation_of_all_chars_except_last[position:]
+        )
+        permutations.add(permutation)
+    
+    return permutations
 
   # Tests
-
-  class Test(unittest.TestCase):
+class Test(unittest.TestCase):
 
     def test_empty_string(self):
         actual = get_permutations('')
