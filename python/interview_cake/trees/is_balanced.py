@@ -22,7 +22,7 @@ def is_balanced(tree_root):
     depths = []
     stack = []
 
-    stack.append((tree_root, 1))
+    stack.append((tree_root, 0))
 
     while stack:
         node, depth = stack.pop()

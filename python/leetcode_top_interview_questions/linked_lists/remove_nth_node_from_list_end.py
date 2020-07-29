@@ -21,6 +21,7 @@ class Solution:
           ptr1 += 1
 
         slow.next = slow.next.next
+        return head
         
 
         

@@ -15,10 +15,18 @@ class Solution:
           - One way is to iterate through each linked list and make an array, then sort and relink
           - another way is to link directly by iterating through the array 
         """
+        prehead = ListNode(-1)
         big_list = []
         # just iterating through these for now to figure out how to properly approach this problem
         for link in lists:
           while link:
             big_list.append(link.val)
             link = link.next
-        print(big_list)
+        # could use merge sort here, but this is fine
+        prev = prehead
+        prev.next = big_list[0]
+        big_list.sort()
+        for i in range(len(big_list) - 1):
+          big_list[i].next = big_list[i+1]
+
+        return prehead.next
