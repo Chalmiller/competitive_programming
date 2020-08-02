@@ -53,13 +53,16 @@ class Solution:
                 if character in dict_t and window_counts[character] < dict_t[character]:
                     formed -= 1
                 l += 1
-            r == 1
+            r += 1
         return "" if ans[0] == math.inf else s[ans[1] : ans[2] + 1]
 
 
 class TestMinWindow(unittest.TestCase):
 
     def test_working_solution(self):
-        pass
+        s = "ADOBECODEBANC"
+        t = "ABC"
+        output = "BANC"
+        self.assertEqual(output, Solution().minWindow(s, t))
 
 unittest.main(verbosity=2)
