@@ -40,7 +40,6 @@ class Solution:
         max_gain(root)
         return max_sum
 
-
 class TestMaxPathSum(unittest.TestCase):
     def test_max_path_sum(self):
         pass
