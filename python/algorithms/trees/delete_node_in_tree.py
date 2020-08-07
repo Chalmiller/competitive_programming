@@ -9,7 +9,13 @@ import unittest
 #         self.right = right
 class Solution:
     def deleteNode(self, root: TreeNode, key: int) -> TreeNode:
-        pass
+        """
+        Task: delete a node and return the modified tree
+        Inutition: This is similar to the delete linked list node deal
+
+        Algorithm: 
+            - 
+        """
 
 class TestDeleteNode(unittest.TestCase):
     def test_delete_node(self):
