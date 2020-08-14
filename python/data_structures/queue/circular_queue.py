@@ -3,7 +3,6 @@ from ..exceptions import Empty
 class CircularQueue:
   """Queue implementation using circularly linked list for storage."""
 
-  #---------------------------------------------------------------------------------
   # nested _Node class
   class _Node:
     """Lightweight, nonpublic class for storing a singly linked node."""
