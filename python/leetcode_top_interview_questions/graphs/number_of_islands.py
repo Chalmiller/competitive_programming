@@ -3,6 +3,7 @@ import unittest
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
+        # Global variable assignment
         self.ROWS = len(grid) - 1
         self.COLS = len(grid[0]) - 1
 
