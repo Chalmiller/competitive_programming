@@ -42,7 +42,7 @@ class Tree:
     raise NotImplementedError('must be implemented by subclass')
 
   def __len__(self):
-    """Return the total number of elements in the tree."""
+    """Return the total number of elements in the trees."""
     raise NotImplementedError('must be implemented by subclass')
 
   # ---------- concrete methods implemented in this class ----------
