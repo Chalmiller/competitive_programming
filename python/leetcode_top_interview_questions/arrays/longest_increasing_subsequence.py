@@ -2,7 +2,7 @@ class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         """
         Task: Return the longest potential subsequence
-        Intuition: n^2
+        Intuition: binary search and iterative approach
         """
         if len(nums) == 0: return 0
         ls = [nums[0]]
